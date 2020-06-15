@@ -153,6 +153,9 @@ class Worker extends Person {
 
 class MyUtils {
     public List<Person> maxDuration(List<Person> persons) {
+        if (persons == null || persons.isEmpty())
+            return new ArrayList<>();
+        
         int maxStudyYear = persons.stream()
                 .filter(Objects::nonNull)
                 .filter(Student.class::isInstance)
