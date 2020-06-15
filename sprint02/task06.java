@@ -129,6 +129,9 @@ class Rectangle extends Shape  {
 
 class MyUtils {
     public List<Shape> maxAreas(List<Shape> shapes) {
+        if (shapes == null || shapes.isEmpty())
+            return new ArrayList<>();
+        
         double maxCircleArea = shapes.stream()
                 .filter(Objects::nonNull)
                 .filter(Circle.class::isInstance)
