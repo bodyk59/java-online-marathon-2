@@ -142,6 +142,9 @@ class Cappuccino extends Caffee {
 
 class MyUtils {
     public Map<String, Double> averageRating(List<Caffee> coffees) {
+        if (coffees == null || coffees.isEmpty())
+            return new HashMap<String, Double>();
+        
         return coffees.stream()
                 .filter(Objects::nonNull)
                 .collect(Collectors.groupingBy(Caffee::getName,
